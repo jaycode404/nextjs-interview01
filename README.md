@@ -1,37 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Drodat, Inc. Technical Assessment
+
+Welcome to the Drodat, Inc. technical interview project. The purpose of this project is to evaluate your ability to work with modern web technologies in a practical setting. You'll be enhancing a map-based application built with Next.js, integrating Firebase authentication and Firestore. The project simulates real-world development tasks where you'll need to understand existing code, implement new features, and follow best practices for state management and component architecture. Your changes should demonstrate clean code, performance optimization, and thoughtful UI/UX decisions.
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
+npm install && npm  run dev
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn install && yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Property Risk Dashboard
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Duration: 
+2-4 hours
+### Goal: 
+Create a property risk assessment dashboard that displays and visualizes property data using modern web technologies
+### Pay: 
+This technical assessment is paid. You will be paid for 4 hours of work whether we hire you or not at a rate of 200mxn per hour. The total pay on the project is 800mxn.
 
-## Learn More
+### Project Overview
+Create a web application using NextJS that displays a set of pre-defined properties on a map, shows their risk assessments, and allows users to view detailed property information. The application should demonstrate your ability to work with maps, handle data visualization, and create a responsive user interface.
 
-To learn more about Next.js, take a look at the following resources:
+### Technical Requirements
+- Tech Stack<br />
+- Next.js 14+<br />
+- TypeScript<br />
+- Firebase Authentication<br />
+- Google Maps API<br />
+- Tailwind CSS<br />
+- Git version control<br />
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Core Features
+- Authentication<br />
+- Implement email/password authentication using Firebase<br />
+- Protected dashboard route for authenticated users<br />
+- Sign-in/sign-out functionality<br />
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Map Dashboard
+- Display Google Map with 3-4 pre-defined properties from firestore database<br />
+- Custom markers for each property found in the database<br />
+- Click handling to show property details<br />
 
-## Deploy on Vercel
+### Property Details Panel Or Popup
+- Property information card<br />
+- All of the following data is found in the firestore database for each property. This will demonstrate your ability to read from the firestore database and display relative data within the platform.<br />
+- Risk score (0-100)<br />
+- Roof type<br />
+- Image<br />
+- Color-coded risk levels (this is not included in the firestore database, you should create a function of some sort that tells you which color to display based on the damage score)<br />
+- Number of times property has been viewed<br />
+- This is preset to a value of 0 in the firestore database<br />
+- This will demonstrate your ability to write to the firestore database for user actions on the web app<br />
+- When someone clicks on a pin on the map, you should increase the relative field in Firestore by one<br />
+- You should make the total number of views visible on the property details panel or popup you create<br />
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Required API Integration
+- Google Maps JavaScript API<br />
+- Firebase<br />
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# dev-interview-01b
+### UI Requirements
+- Responsive design (mobile and desktop)<br />
+- Loading states for data fetching<br />
+- Error handling<br />
+
+### Project Setup
+
+1. In this project there are 3 pre-made pages:
+```
+src/app/sign-up/page.tsx
+src/app/sign-in/page.tsx
+src/app/page.tsx
+```
+And one file with the firebase credentials:
+```
+src/app/lib/firebase.ts
+```
+
+2. Add user sign up functionality to 'src/app/sign-up/page.tsx' using firebase authentication.
+
+3. Connect firebase authentication to 'src/app/sign-in/page.tsx' to allow users to sign in.
+
+4. Build out an interactive map by editing the files in the src/app/map folder to update the page at 'src/app/page.tsx'.
+
+5. Implement a sign up / sign in flow to correctly redirect a new user to the correct pages.
